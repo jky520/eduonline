@@ -1,0 +1,38 @@
+# Tomcat
+server:
+    tomcat:
+        uri-encoding: UTF-8
+        max-threads: 1000
+        min-spare-threads: 30
+    port: 8080
+    session:
+      timeout: 30
+#    context-path: /login
+spring:
+    # jackson时间格式设置
+    jackson:
+        time-zone: GMT+8
+        date-format: yyyy-MM-dd HH:mm:ss
+    http:
+      encoding:
+        charset: GBK
+    datasource:
+        type: com.alibaba.druid.pool.DruidDataSource
+        driver-class-name: com.mysql.jdbc.Driver
+        url: jdbc:mysql://127.0.0.1:3306/db_test
+        username: root
+        password: 123456
+#    jpa:
+#      database: mysql
+#      show-sql: true
+#      hibernate:
+#        ddl-auto: update
+#        naming:
+#          strategy: org.hibernate.cfg.ImprovedNamingStrategy
+#      properties:
+#        hibernate:
+#          dialect: org.hibernate.dialect.MySQL5Dialect
+# Mybatis配置
+mybatis:
+    mapper-locations: classpath:mapper/**/*.xml
+    configLocation: classpath:mybatis.xml
